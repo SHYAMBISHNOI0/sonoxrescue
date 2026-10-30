@@ -1,0 +1,298 @@
+.case-explainer {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.case-explainer-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 21px;
+  border-bottom: 1px solid var(--border);
+  gap: 14px;
+  background: #f2f6ef;
+}
+.case-explainer-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.case-explainer-heading .eyebrow {
+  margin: 0;
+  font-size: 8px;
+  color: #4d6855;
+}
+.case-reference {
+  font-size: 11px;
+  color: #4c6057;
+}
+.case-reference > span {
+  margin: 0 5px;
+  color: #7a8b7e;
+}
+.example-selector {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  color: #526957;
+}
+.example-selector select {
+  font-size: 11px;
+  padding: 8px 10px;
+  border-color: #d6e2d3;
+}
+.explanation-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.explanation-steps > article {
+  padding: 22px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.explanation-steps > article:last-child {
+  border: 0;
+}
+.explanation-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #236b5c;
+  margin-bottom: 15px;
+}
+.explanation-label > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid #d3e4d6;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  margin-right: 3px;
+  background: #eff6ec;
+  font-size: 10px;
+}
+.explanation-label svg {
+  stroke-width: 1.7;
+}
+.explanation-steps h2 {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.2px;
+  max-width: 310px;
+  margin-bottom: 8px;
+}
+.explanation-steps p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #56685f;
+  margin-bottom: 17px;
+  max-width: 370px;
+}
+.explanation-steps .text-link,
+.explanation-steps .text-button {
+  margin-top: auto;
+  font-size: 10px;
+  padding: 4px 0;
+  min-height: 30px;
+}
+.explanation-gap {
+  display: flex;
+  gap: 9px;
+  padding: 12px 21px;
+  background: #fbfcf8;
+  border-top: 1px solid var(--border);
+  align-items: flex-start;
+  color: #59705b;
+}
+.explanation-gap svg {
+  margin-top: 2px;
+}
+.explanation-gap p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #566b55;
+}
+.explanation-gap strong {
+  font-weight: 600;
+}
+.source-guide {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+.source-guide > section {
+  padding: 17px 18px;
+  border: 1px solid var(--border);
+  background: #fbfdf9;
+  border-radius: 8px;
+}
+.source-guide-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.source-guide h3 {
+  font-size: 13px;
+}
+.source-guide p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 7px;
+  color: #475f50;
+}
+.source-guide small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 5px;
+  color: #5b6e5f;
+}
+.source-guide summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #106b66;
+  padding: 10px 0 0;
+}
+.source-guide dl {
+  margin: 12px 0 0;
+  border-top: 1px solid var(--border);
+  padding-top: 3px;
+}
+.source-guide dt {
+  font-size: 10px;
+}
+.source-guide dd {
+  font-size: 11px;
+}
+.metadata-explanation {
+  padding: 17px 18px;
+  border-radius: 8px;
+  background: #edf4e9;
+}
+.metadata-explanation h3 {
+  font-size: 13px;
+}
+.metadata-explanation p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.metadata-explanation dd {
+  overflow-wrap: anywhere;
+}
+.network-source-intro {
+  line-height: 1.8;
+  color: #4c6252;
+}
+@media (max-width: 1024px) {
+  .explanation-steps > article {
+    padding: 18px;
+  }
+  .explanation-steps h2 {
+    font-size: 13px;
+  }
+  .explanation-steps p {
+    font-size: 10px;
+  }
+  .explanation-label {
+    font-size: 9px;
+    gap: 5px;
+  }
+  .explanation-label > span {
+    height: 20px;
+    width: 20px;
+    margin-right: 0;
+  }
+  .explanation-label svg {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .explanation-steps {
+    grid-template-columns: 1fr;
+  }
+  .explanation-steps > article {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 20px;
+  }
+  .explanation-label {
+    font-size: 10px;
+    margin-bottom: 9px;
+  }
+  .explanation-label svg {
+    display: block;
+  }
+  .explanation-steps h2 {
+    font-size: 15px;
+    max-width: none;
+  }
+  .explanation-steps p {
+    font-size: 11px;
+    max-width: none;
+    margin-bottom: 8px;
+  }
+  .explanation-steps .text-link,
+  .explanation-steps .text-button {
+    font-size: 11px;
+  }
+  .case-explainer-heading {
+    padding: 16px 20px;
+  }
+  .explanation-gap {
+    padding: 13px 20px;
+  }
+  .source-guide-title {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 560px) {
+  .case-explainer-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+  }
+  .example-selector {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .example-selector select {
+    flex: 1;
+    min-width: 0;
+  }
+  .explanation-steps > article {
+    padding: 18px 16px;
+  }
+  .explanation-gap {
+    padding: 13px 16px;
+  }
+  .explanation-steps .text-link,
+  .explanation-steps .text-button {
+    min-height: 36px;
+  }
+  .source-guide > section {
+    padding: 15px;
+  }
+  .source-guide h3 {
+    font-size: 12px;
+  }
+  .source-guide p {
+    font-size: 11px;
+  }
+  .source-guide small {
+    font-size: 10px;
+  }
+  .source-guide summary {
+    min-height: 36px;
+  }
+}

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Testing and cache
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build files
+build/
+*.log
+*.tmp
+
+# Database
+*.db
+
+# Application data
+data/
+
+# Playwright
+test-results/
+playwright-report/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+
+# Archives
+frontend.zip

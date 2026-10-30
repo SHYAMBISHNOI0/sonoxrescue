@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: sonorescue
+      POSTGRES_DB: sonorescue
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/setup_env.py first}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sonorescue"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  orthanc:
+    image: orthancteam/orthanc:26.10.0
+    environment:
+      ORTHANC__NAME: SonoRescue-Synthetic-PACS
+      ORTHANC__AUTHENTICATION_ENABLED: "true"
+      ORTHANC__REGISTERED_USERS: '{"${ORTHANC_USER:-sonorescue}":"${ORTHANC_PASSWORD:?Run scripts/setup_env.py first}"}'
+      DICOM_WEB_PLUGIN_ENABLED: "true"
+      ORTHANC__DICOM_WEB__ENABLE: "true"
+      ORTHANC__REMOTE_ACCESS_ALLOWED: "true"
+    ports: ["127.0.0.1:8042:8042"]
+    volumes: ["orthanc-data:/var/lib/orthanc/db"]
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      SESSION_SECRET: ${SESSION_SECRET:?Run scripts/setup_env.py first}
+      DEMO_PASSWORD: ${DEMO_PASSWORD:?Run scripts/setup_env.py first}
+      DATABASE_URL: postgresql+psycopg://sonorescue:${POSTGRES_PASSWORD}@postgres:5432/sonorescue
+      ORTHANC_URL: http://orthanc:8042
+      ORTHANC_USER: ${ORTHANC_USER:-sonorescue}
+      ORTHANC_PASSWORD: ${ORTHANC_PASSWORD}
+      CORS_ORIGINS: http://127.0.0.1:8080,http://localhost:8080
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["backend-data:/app/data"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      orthanc:
+        condition: service_started
+    restart: on-failure:3
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+    ports: ["127.0.0.1:8080:80"]
+    depends_on: [backend]
+volumes:
+  postgres-data:
+  orthanc-data:
+  backend-data:

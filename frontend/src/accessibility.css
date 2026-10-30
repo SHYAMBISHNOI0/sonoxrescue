@@ -1,0 +1,118 @@
+/* Secondary text remains legible on the warm ivory and sage surfaces. */
+.workspace-label > span, .command-button kbd, .stage-number, .live-label {color:#536950}
+.workspace-label,
+.eyebrow,
+.context-line,
+.context-line > span:first-child,
+.panel-heading p,
+.stat-card > span,
+.stat-card small,
+.overview-banner p,
+.overview-banner a,
+.network-caption,
+.network-legend,
+.network-legend a,
+.node-label,
+.network-node small,
+.integrity-ring small,
+.integrity-items span,
+.quiet-note,
+.pipeline-stage > div > span,
+.pipeline-stage small,
+th,
+td small,
+.activity-list p,
+.activity-list small,
+.activity-link,
+.tiny-label,
+.research-strip p,
+.research-strip > a,
+.footer,
+.scenario-list p,
+.scenario-number,
+.stage-display > small,
+.field > span,
+.permission-list,
+.mobile-event span,
+.mobile-event small,
+.research-note,
+.research-note small,
+.collapse-button,
+.brand small,
+.environment,
+.command-button,
+.pagination,
+.finding-label,
+.evidence-node small,
+.evidence-node span,
+.react-flow__edge-text,
+.back-link,
+.mini-metrics,
+.research-mark,
+.research-mark span {
+  color: #536950;
+  fill: #536950;
+}
+.badge.amber {
+  color: #795511;
+}
+.badge.red {
+  color: #9d463c;
+}
+.badge.neutral {
+  color: #4b625a;
+}
+.badge.green {
+  color: #28613f;
+}
+.missing {
+  color: #8a642c;
+}
+.safety-note,
+.safety-note p {
+  color: #806428;
+}
+.blocked-note {
+  color: #9d4c38;
+}
+.research-intro p {
+  color: #536950;
+}
+.confusion span {
+  color: #426038;
+}
+.confusion span:nth-child(2),
+.confusion span:nth-child(3) {
+  color: #80602d;
+}
+.setting-row small,
+.health-grid small {
+  color: #536950;
+}
+.research-mark {
+  color: #50774e;
+}
+.text-link,
+.text-button {
+  color: #106b66;
+}
+@media (max-width: 560px) {
+  .button,
+  .icon-button,
+  .nav-link,
+  .text-button,
+  .table-link,
+  .mobile-event,
+  .simulation-controls button {
+    min-height: 36px;
+  }
+  .nav-link {
+    height: 42px;
+  }
+  .stat-card small {
+    font-size: 9px;
+  }
+  .panel-heading p {
+    font-size: 10px;
+  }
+}
